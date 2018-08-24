@@ -1,0 +1,14 @@
+.Navigation ul:before{
+    content: "";
+    background:#25c3aa;
+    width: 5px;
+    position:absolute;
+    left: 9px;
+    top: 10px;
+    bottom: 10px;
+}
+.Navigation ul{
+    position: relative;
+    list-style:none;
+    padding-left: 0px;
+}

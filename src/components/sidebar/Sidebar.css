@@ -1,0 +1,11 @@
+.Sidebar{
+    background: #f3f3f3;
+    padding: 40px;
+    position: fixed;
+    height: 100%;
+}
+@media (max-width: 767px){
+    .Sidebar{
+        left: -280px;
+    }
+}

@@ -1,0 +1,34 @@
+li{
+    color: #8c929d;
+    margin-bottom: 15px;
+    cursor: pointer;
+    position:relative;
+    padding-left:30px;
+    transition:all .25s;
+}
+li:before{
+    content: "\2022";
+    color: #fff;
+    left: 0px;
+    position: absolute;
+    z-index: 9999;
+    font-size: 70px;
+    line-height: 10px;
+    top: 8px;
+    height: 20px;
+    transition:all .25s;
+}
+
+li.active:before,
+li.complete:before
+{
+    content: "\2022";
+    color: #25c3aa;
+    left: 0px;
+    position: absolute;
+    z-index: 9999;
+    font-size: 70px;
+    line-height: 10px;
+    top: 8px;
+    transition:all .25s;
+}
