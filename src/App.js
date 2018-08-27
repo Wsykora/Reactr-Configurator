@@ -111,7 +111,10 @@ class App extends Component {
             />
           </Col>
           <Col sm="12" md="8">
-            <Wizard />
+            <Wizard
+              active={this.state.active}
+              steps={this.state.steps}
+            />
           </Col>
         </Row>
       </Container>
