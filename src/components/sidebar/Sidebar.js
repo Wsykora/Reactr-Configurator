@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Sidebar.css";
+import './Sidebar.css';
 
 import Logo from './logo/Logo';
 import Navigation from './navigation/Navigation';

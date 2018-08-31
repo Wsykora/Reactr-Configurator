@@ -1,14 +1,14 @@
 import React from 'react';
-import "./StepNav.css";
+import './StepNav.css';
 
 function StepNav(props) {
 
-    let navState = "";
+    let navState = '';
     if (props.complete) {
-        navState = "complete";
+        navState = 'complete';
     }
     if (props.active) {
-        navState = "active";
+        navState = 'active';
     }
     return (
 
