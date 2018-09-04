@@ -11,51 +11,51 @@ class App extends Component {
     active: 0,
     steps: [
       {
-        name: "Prerequisites",
+        name: 'Prerequisites',
         complete: false
       },
       {
-        name: "Directory & Workspace",
+        name: 'Directory & Workspace',
         complete: false
       },
       {
-        name: "Router",
+        name: 'Router',
         complete: false
       },
       {
-        name: "Pre-Processor",
+        name: 'Pre-Processor',
         complete: false
       },
       {
-        name: "UI Library",
+        name: 'UI Library',
         complete: false
       },
       {
-        name: "Authentication",
+        name: 'Authentication',
         complete: false
       },
       {
-        name: "Database",
+        name: 'Database',
         complete: false
       },
       {
-        name: "Ajax Library",
+        name: 'Ajax Library',
         complete: false
       },
       {
-        name: "Testing Library",
+        name: 'Testing Library',
         complete: false
       },
       {
-        name: "Time Library",
+        name: 'Time Library',
         complete: false
       },
       {
-        name: "Type Checking",
+        name: 'Type Checking',
         complete: false
       },
       {
-        name: "Run Setup",
+        name: 'Run Setup',
         complete: false
       },
 
@@ -73,30 +73,23 @@ class App extends Component {
     console.log(event.keyCode);
 
     // next step
-    if (
-      (event.keyCode === 40 && (totalSteps - 1) > currentActive) ||
-      (event.keyCode === 39 && (totalSteps - 1) > currentActive) ||
-      (event.keyCode === 13 && (totalSteps - 1) > currentActive)
-
-    ) {
+    if ([13, 39, 40].includes(event.keyCode) && (totalSteps - 1) > currentActive) {
       this.setState({ active: currentActive + 1 })
     }
 
     // previous step
-    if (
-      (event.keyCode === 38 && currentActive > 0) ||
-      (event.keyCode === 37 && currentActive > 0) ||
-      (event.keyCode === 8 && currentActive > 0)
-
-    ) {
+    if ([8, 37, 38].includes(event.keyCode) && currentActive > 0) {
       this.setState({ active: currentActive - 1 })
     }
   }
   componentDidMount() {
-    document.addEventListener("keydown", this.handleArrowNav, false);
+    // NOTE: this is going to have unintended consequences for keyboard navigation elsewhere
+    // As soon as you add a text input and use arrows to shift your cursor around, navigation will occur
+    // If you think it's valuable, I'd limit it to when focus is inside the nav
+    document.addEventListener('keydown', this.handleArrowNav, false);
   }
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleArrowNav, false);
+    document.removeEventListener('keydown', this.handleArrowNav, false);
   }
 
   render() {
